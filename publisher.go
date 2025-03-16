@@ -44,7 +44,7 @@ func main() {
 		messageValue := messageTexts[i]
 		err := publisher.Produce(&kafka.Message{
 			TopicPartition: kafka.TopicPartition{Topic: &kafkaTopic, Partition: kafka.PartitionAny},
-			value:          []byte(messageValue),
+			Value:          []byte(messageValue),
 		}, nil)
 
 		if err != nil {
